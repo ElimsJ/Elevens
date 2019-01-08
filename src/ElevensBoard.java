@@ -1,4 +1,6 @@
-import java.util.List;
+import
+
+java.util.List;
 import java.util.ArrayList;
 
 /**
@@ -54,7 +56,6 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		return true;
 	}
 
 	/**
