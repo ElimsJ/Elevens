@@ -58,6 +58,10 @@ public class ThirteensBoard extends Board
         public boolean isLegal(List<Integer> selectedCards)
         {
             /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+            if (selectedCards.size() == 1)
+            {
+                return containsK(selectedCards);
+            }
             if (selectedCards.size() == 2)
             {
                 return containsPairSum13(selectedCards);
@@ -150,5 +154,22 @@ public class ThirteensBoard extends Board
                 return (j && q && k);
             }
         }
+    private boolean containsK(List<Integer> selectedCards) {
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        {
+            boolean k = false;
+            if (selectedCards.size() < 3) {
+                return false;
+            }
+            for (int i = 0; i < selectedCards.size(); i++) {
+
+                 if (cardAt(selectedCards.get(i)).rank() == "king")
+                 {
+                    k = true;
+                 }
+            }
+            return (k);
+        }
+    }
 
 }
