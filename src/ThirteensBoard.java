@@ -28,7 +28,7 @@ public class ThirteensBoard extends Board
          * The values of the cards for this game to be sent to the deck.
          */
         private static final int[] POINT_VALUES =
-                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
+                {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         /**
          * Flag used to control debugging print statements.
@@ -66,7 +66,7 @@ public class ThirteensBoard extends Board
             {
                 return containsPairSum13(selectedCards);
             }
-            else if (selectedCards.size() == 3)
+            if (selectedCards.size() == 3)
             {
                 return containsJQK(selectedCards);
             }
@@ -90,11 +90,13 @@ public class ThirteensBoard extends Board
             List<Integer> indexes = cardIndexes();
             if(!containsPairSum13(indexes))
             {
-                return containsJQK(indexes);
+                if(!containsK(indexes))
+                {
+                    return containsJQK(indexes);
+                }
             }
             return true;
         }
-        //a
 
         /**
          * Check for an 11-pair in the selected cards.
@@ -156,20 +158,17 @@ public class ThirteensBoard extends Board
         }
     private boolean containsK(List<Integer> selectedCards) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        boolean k = false;
+        if(selectedCards.size() > 1)
         {
-            boolean k = false;
-            if (selectedCards.size() < 3) {
-                return false;
-            }
-            for (int i = 0; i < selectedCards.size(); i++) {
-
-                 if (cardAt(selectedCards.get(i)).rank() == "king")
-                 {
-                    k = true;
-                 }
-            }
-            return (k);
+            return false;
         }
+        int i = 0;
+        if(cardAt(selectedCards.get(i)).rank() == "king")
+        {
+            k = true;
+        }
+        return k;
     }
 
 }
