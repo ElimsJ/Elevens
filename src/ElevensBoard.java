@@ -84,7 +84,7 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible()
 	{
-		
+
 	}
 
 	/**
