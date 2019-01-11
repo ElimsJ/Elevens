@@ -1,3 +1,5 @@
+import com.sun.javafx.image.IntPixelGetter;
+
 import
 
 java.util.List;
@@ -112,7 +114,7 @@ public class ElevensBoard extends Board {
 		{
 			for (int j = i + 1; j < selectedCards.size(); j++)
 			{
-				if (cardAt(selectedCards.get(i)).pointValue() + cardAt(selectedCards.get(j)).pointValue() == 11)
+				if (cardAt(selectedCards.get(i)).pointValue() + cardAt(selectedCards.get(j)).pointValue() == 13)
 				{
 					return true;
 				}
